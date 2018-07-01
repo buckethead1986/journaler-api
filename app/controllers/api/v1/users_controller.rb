@@ -15,9 +15,16 @@ class Api::V1::UsersController < ActionController::API
     render json: @user.to_json
   end
 
+  def update
+    @user = User.find_by(id: user_params[:id])
+    @user.settings = user_params['settings']
+    @user.save
+    render json: @user.to_json
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:id, :username, :password, :settings)
   end
 end

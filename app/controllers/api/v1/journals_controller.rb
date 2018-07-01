@@ -5,7 +5,7 @@ class Api::V1::JournalsController < ActionController::API
   end
 
   def show
-    @journal = Journal.find_by(id: journal_params[:id])
+    @journal = Journal.find_by(id: params[:id])
     render json: @journal.to_json
   end
 
