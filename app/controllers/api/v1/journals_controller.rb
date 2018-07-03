@@ -15,12 +15,22 @@ class Api::V1::JournalsController < ActionController::API
   end
 
   def destroy
+    Journal.find_by(id: params[:id]).destroy
+    render json: Journal.all
+  end
+
+  def update
+    @journal = Journal.find_by(id: params[:id])
+    @journal.title = journal_params[:title]
+    @journal.content = journal_params[:content]
+    @journal.save
+    render json: @journal.to_json
   end
 
   private
 
   def journal_params
-    params.require(:journal).permit(:user_id, :title, :content)
+    params.require(:journal).permit(:user_id, :title, :content, :id)
   end
 
 end
