@@ -1,7 +1,7 @@
 class Api::V1::JournalsController < ActionController::API
   def index
     @journals = Journal.all
-    render json: @journals.to_json
+    render json: @journals.order(:created_at).to_json
   end
 
   def show

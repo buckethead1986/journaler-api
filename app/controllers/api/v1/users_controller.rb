@@ -1,6 +1,5 @@
 class Api::V1::UsersController < ActionController::API
   def index
-    # Renders the json data with journals sorted by created_at attribute, in descending order.
     @users = User.all
     render json: @users.to_json(:include => :journals)
   end
