@@ -3,6 +3,7 @@ class CreateJournals < ActiveRecord::Migration[5.2]
     create_table :journals do |t|
       t.integer :user_id
       t.text :content
+      t.string :title
 
       t.timestamps
     end
