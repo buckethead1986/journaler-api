@@ -29,4 +29,4 @@ https://journaler-api.herokuapp.com/api/v1/.
 
 This public accessibility is mirrored in our front-end application.
 https://journaler.herokuapp.com
-I specifically did not add cross-user journal access, as I wanted a personal journaling site based on personal growth and development.
+I specifically did not add cross-user journal access (a la a blog site), as I wanted a personal journaling site based on personal growth and development.
